@@ -1,37 +1,32 @@
 package com.cdu.chatappapi.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
+
     Integer uid;
+
     String username;
+
     String password;
 
-    public User(Integer uid, String username, String password) {
-        this.uid = uid;
-        this.username = username;
-        this.password = password;
-    }
+    String salt;
 
-    public Integer getUid() {
-        return uid;
-    }
+    Integer gender;
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
-    }
+    String avatar;
 
-    public String getUsername() {
-        return username;
-    }
+    String email;
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    String phone;
 
-    public String getPassword() {
-        return password;
-    }
+    Date createdTime;
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

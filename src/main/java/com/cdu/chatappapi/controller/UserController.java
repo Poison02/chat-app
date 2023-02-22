@@ -1,7 +1,6 @@
 package com.cdu.chatappapi.controller;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.cdu.chatappapi.controller.ex.*;
 import com.cdu.chatappapi.entity.User;
 import com.cdu.chatappapi.service.TokenService;
@@ -28,17 +27,17 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/login")
+    @PostMapping("/api/login")
     public JsonResponseUtil<String> login(@RequestBody User user) {
         // 获取用户信息
-        User result = userService.getUserByUsername(user.getUsername());
+        User result = userService.login(user.getUsername(), user.getPassword());
         // 根据用户信息生成token
         String token = tokenService.getToken(result);
         // 将token返回给前端
         return new JsonResponseUtil<>(200, "success", token);
     }
 
-    @PostMapping("/register")
+    @PostMapping("/api/register")
     public JsonResponseUtil<String> register(@RequestBody User user){
         if (null == user){
             System.out.println("请输入内容！");
@@ -62,7 +61,7 @@ public class UserController {
         AVATAR_TYPE.add("image/jpeg");
     }
 
-    @PostMapping("/updateAvatar")
+    @PostMapping("/api/updateAvatar")
     public JsonResponseUtil<String> updateAvatar(MultipartFile file, HttpServletRequest request, HttpSession session){
 
         // 判断上传文件是否为空

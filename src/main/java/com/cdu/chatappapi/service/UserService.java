@@ -11,6 +11,8 @@ public interface UserService {
      */
     User getUserByUsername(String username);
 
+    User login(String username, String password);
+
     Integer register(User user);
 
     Integer updateAvatar(String username, String avatar);

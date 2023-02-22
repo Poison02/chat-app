@@ -13,7 +13,8 @@ public interface UserMapper {
     @Select("SELECT * FROM user WHERE username=#{username}")
     User findByUsername(String username);
 
-    @Insert("insert into user (username, password) values(#{username}, #{password})")
+    @Insert("insert into user (username, password, salt, gender, avatar, email, phone, createdTime) " +
+            "values(#{username}, #{password}, #{salt}, #{gender}, #{avatar}, #{email}, #{phone}, #{createdTime})")
     Integer register(User user);
 
     @Update("update user set avatar=#{avatar} where username=#{username}")

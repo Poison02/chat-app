@@ -34,7 +34,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         } catch (JWTDecodeException jwtDecodeException) {
             throw new LoginException("token 解码失败");
         }
-        // 通过uid获取到对象
+        // 通过username获取到对象
         User user = userService.getUserByUsername(username);
 
         // 生成token验证器

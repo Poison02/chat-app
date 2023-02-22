@@ -20,8 +20,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
         ArrayList<String> excludeList = new ArrayList<>();
         excludeList.add("/**/.html");
         excludeList.add("/**/.js");
-        excludeList.add("/login");
-        excludeList.add("/register");
+        excludeList.add("/api/login");
+        excludeList.add("/api/register");
         excludeList.add("/img/*");
         // 添加拦截器
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(excludeList);
