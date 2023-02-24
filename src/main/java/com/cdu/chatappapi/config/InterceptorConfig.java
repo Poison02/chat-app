@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 
 @Configuration
@@ -22,6 +23,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
         excludeList.add("/**/.js");
         excludeList.add("/api/login");
         excludeList.add("/api/register");
+        excludeList.add("/api/chat");
+        excludeList.add("/api/group");
+        excludeList.add("/api/group/message");
         excludeList.add("/img/*");
         // 添加拦截器
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(excludeList);

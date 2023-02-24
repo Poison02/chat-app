@@ -1,5 +1,6 @@
 package com.cdu.chatappapi.service.Impl;
 
+import com.cdu.chatappapi.entity.Group;
 import com.cdu.chatappapi.entity.User;
 import com.cdu.chatappapi.mapper.UserMapper;
 import com.cdu.chatappapi.service.UserService;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -68,6 +70,37 @@ public class UserServiceImpl implements UserService {
         return rows;
     }
 
+
+    @Override
+    public String findFriend(String username){
+        if (null == username){
+            System.out.println("这里是查找好友列表，出错！");
+        }
+
+        String list = userMapper.findFriend(username);
+
+        if (null == list){
+            System.out.println("没有任何的好友！");
+        }
+
+        return list;
+    }
+
+    @Override
+    public User getFewInfo(String username){
+        if (null == username){
+            System.out.println("没有好友和群组！");
+        }
+
+        User user = userMapper.findFewInfo(username);
+
+        if (null == user){
+            System.out.println("查不出来名字和头像！");
+        }
+
+        return user;
+    }
+
     @Override
     public Integer updateAvatar(String username, String avatar) {
 
@@ -83,6 +116,44 @@ public class UserServiceImpl implements UserService {
 
         return rows;
 
+    }
+
+    @Override
+    public Integer addFriend(List<String> friendList, String username) {
+
+        if (null == friendList){
+            System.out.println("加好友不能为空！");
+        }
+        if (null == username){
+            System.out.println("请指定谁要加好友！");
+        }
+
+        Integer rows = userMapper.addFriend(friendList.toString(), username);
+        if (1 != rows){
+            System.out.println("加好友服务器有问题！");
+        }
+
+        return rows;
+    }
+
+    @Override
+    public List<Group> returnGroup(Integer groupId){
+        if (null == groupId){
+            System.out.println("您未加入任何群组！");
+        }
+
+        List<Group> groupList = userMapper.findGroup(groupId);
+
+        if (null == groupList){
+            System.out.println("查找群组 服务器有问题！");
+        }
+
+        return groupList;
+    }
+
+    @Override
+    public String returnMembers(Integer groupId) {
+        return userMapper.findGroupMembers(groupId);
     }
 
 

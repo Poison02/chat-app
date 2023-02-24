@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @Slf4j
-public class ChatAppApiApplication implements CommandLineRunner {
+public class ChatAppApiApplication implements CommandLineRunner{
     @Autowired
     SocketIOServer socketIOServer;
 

@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 @Data
 @AllArgsConstructor
@@ -28,5 +30,10 @@ public class User {
     String phone;
 
     Date createdTime;
+
+    // 好友列表
+    private List<String> friendList;
+
+    private Integer groupId;
 
 }
