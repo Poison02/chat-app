@@ -28,7 +28,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             throw new LoginException("token不存在，请重新登录");
         }
         String username;
-        // 获取token中的uid
+        // 获取token中的username
         try {
             username = JWT.decode(token).getAudience().get(0);
         } catch (JWTDecodeException jwtDecodeException) {
