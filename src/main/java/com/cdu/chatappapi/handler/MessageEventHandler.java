@@ -87,9 +87,11 @@ public class MessageEventHandler {
         // 得到发送方的客户端容器，后面再进行发送以及存储数据库的功能
         SocketIOClient toUserClient = socketIOClientMap.get(singleMessage.getToUser());
         // 在线
-        if (null != toUserClient){
-            toUserClient.sendEvent("receiveSingleMessageEvent", singleMessage);
-        }
+//        if (null != toUserClient){
+//            System.err.println("shiyishi");
+//            toUserClient.sendEvent("receiveSingleMessageEvent", singleMessage);
+//        }
+        toUserClient.sendEvent("receiveSingleMessageEvent", singleMessage);
 
         messageService.addSingleMsg(singleMessage.getFromUser(),
                 singleMessage.getToUser(),
@@ -111,7 +113,7 @@ public class MessageEventHandler {
         copyMap.remove(groupMessage.getMsgUsername(), copyMap.get(groupMessage.getMsgUsername()));
 
         for (SocketIOClient userClient : copyMap.values()) {
-            if (userClient.isChannelOpen()) {
+            if (null != userClient) {
                 userClient.sendEvent("receiveGroupMessageEvent", groupMessage);
             }
         }

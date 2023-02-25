@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface MessageMapper {
 
-    @Select("select * from singleMessage where fromUser=#{username}")
+    @Select("select * from singleMessage where fromUser=#{username} or toUser=#{username}")
     List<SingleMessage> findAllSingleMsg(String username);
 
     @Insert("insert into singleMessage (fromUser, toUser, content, sendTime) " +

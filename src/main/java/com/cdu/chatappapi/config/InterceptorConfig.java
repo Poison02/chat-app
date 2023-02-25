@@ -27,7 +27,13 @@ public class InterceptorConfig implements WebMvcConfigurer {
         excludeList.add("/api/group");
         excludeList.add("/api/group/message");
         excludeList.add("/img/*");
+        excludeList.add("/index.html");
+        excludeList.add("/");
+        excludeList.add("/static/js/*");
+        excludeList.add("/static/css/*");
+        excludeList.add("/static/media/*");
+        excludeList.add("/*");
         // 添加拦截器
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(excludeList);
+        registry.addInterceptor(loginInterceptor).excludePathPatterns(excludeList);
     }
 }

@@ -14,7 +14,7 @@ public class NettySocketIoServerConfig {
     @Bean
     public SocketIOServer socketIOServer() {
         Configuration config = new Configuration();
-        config.setHostname("175.24.183.52"); // 192.168.161.163  175.24.183.52
+        config.setHostname("localhost"); // 192.168.161.163  175.24.183.52
         config.setPort(8081);
         // 开放跨域设置
         config.setOrigin(null);

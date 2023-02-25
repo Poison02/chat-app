@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b49ec96a.css",
+    "main.js": "/static/js/main.29e647a0.js",
+    "static/js/401.1ffae659.chunk.js": "/static/js/401.1ffae659.chunk.js",
+    "static/js/161.c438a0e6.chunk.js": "/static/js/161.c438a0e6.chunk.js",
+    "static/js/534.4129faf0.chunk.js": "/static/js/534.4129faf0.chunk.js",
+    "static/js/309.1e077031.chunk.js": "/static/js/309.1e077031.chunk.js",
+    "static/js/520.0d453b5f.chunk.js": "/static/js/520.0d453b5f.chunk.js",
+    "static/js/638.b89652f7.chunk.js": "/static/js/638.b89652f7.chunk.js",
+    "static/media/bg print.svg": "/static/media/bg print.ea5d3a3be30e7f0ffc8d9b9db3cba083.svg",
+    "static/media/Emoji Icon.svg": "/static/media/Emoji Icon.e2cb8b284192f48fb093875c1de0e9da.svg",
+    "static/media/Menu Icon.svg": "/static/media/Menu Icon.47342042a908cab77242a9dbcb58a0ef.svg",
+    "static/media/Search.svg": "/static/media/Search.d2bbcfc4d7a36db54a9f57ddf1f1d7cd.svg",
+    "static/media/Search Messages.svg": "/static/media/Search Messages.245fa02dbac8f0e6932ecdd42e3dd5a5.svg",
+    "static/media/More Icon.svg": "/static/media/More Icon.da083c0ac388d9808ad962f568b97226.svg",
+    "static/media/Send Icon.svg": "/static/media/Send Icon.6e65212340e9683853c623bbb2f5f81d.svg",
+    "index.html": "/index.html",
+    "static/media/Call Icon.svg": "/static/media/Call Icon.e77de984d217a1a2a74c646a0207fcdf.svg",
+    "main.b49ec96a.css.map": "/static/css/main.b49ec96a.css.map",
+    "main.29e647a0.js.map": "/static/js/main.29e647a0.js.map",
+    "401.1ffae659.chunk.js.map": "/static/js/401.1ffae659.chunk.js.map",
+    "161.c438a0e6.chunk.js.map": "/static/js/161.c438a0e6.chunk.js.map",
+    "534.4129faf0.chunk.js.map": "/static/js/534.4129faf0.chunk.js.map",
+    "309.1e077031.chunk.js.map": "/static/js/309.1e077031.chunk.js.map",
+    "520.0d453b5f.chunk.js.map": "/static/js/520.0d453b5f.chunk.js.map",
+    "638.b89652f7.chunk.js.map": "/static/js/638.b89652f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b49ec96a.css",
+    "static/js/main.29e647a0.js"
+  ]
+}
